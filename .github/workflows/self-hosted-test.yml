@@ -1,0 +1,19 @@
+name: Self-Hosted Runner Test
+
+on:
+  push:
+    branches:
+      - main  # Or whatever your branch is
+
+jobs:
+  run-on-self-hosted:
+    runs-on: [self-hosted]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print working directory
+        run: pwd
+
+      - name: Echo runner name
+        run: echo "Running on $RUNNER_NAME"
